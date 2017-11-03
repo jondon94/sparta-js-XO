@@ -1,47 +1,60 @@
-//////////////////////////////////////Variables
+///////////////////////////////////////Variables
 
-var player1 = true;
-var player2 = false;
+var i = 0; i < 10;
 // var connect3 = (["", "", ""] || ["", "", ""] || ["", "", ""]);
 
-//////////////////////////////////////Game Controller
+///////////////////////////////////////Game Controller
 
-function changeTurn(){
+function turnAlternator(){
+  changeTurn[i] = document.addEventListener('click', function(event){
+    i++
 
-  var playTurnX = player1
-  var playTurnO = player2
-
-  if (player1 === true){
-      player2 = false;
-      $(function playTurnX(){
-        player2 = true;
-        player1 = false;
-        $('td').on('click', function(){
-        $(this).addClass('X').append("X")
-        console.log('ivebeen clicked by x');
-        })
-      })
-  } else (player2 === true)
-      player1 = false;
-      $(function playTurnO(){
-        player1 = true;
-        player2 = false;
-        $('td').on('click', function(){
-        $(this).addClass('O').append("O")
-        console.log('ive been clicked by o');
-    })
   })
 }
 
-//////////////////////////////////////Clickable reset
+// $(function({
+//   $('td').on('click', function(){
+//     i++
+//   })
+//   })
+// })
+
+function changeTurn(){
+
+    if (i % 2 === 0){
+      $('td').on('click', function(){
+      $(this).addClass('X').html("X")
+
+      console.log('ivebeen clicked by x');
+    })
+    } else {
+      $('td').on('click', function(){
+      $(this).addClass('O').html("O")
+
+      console.log('ive been clicked by o');
+    })
+  }
+}
+
+
+
+///////////////////////////////////////Clickable reset
+
 $(function(){
-  $('#reset').click(function(){
-    $('td').html($(""))
-    console.log('ive been clicked');
+  $('#reset').on('click', function(){
+    $('td').removeClass("X")
+    $('td').empty("")
+    console.log('ive been clicked to reset');
   })
 })
 
-//////////////////////////////////////JUNK
+///////////////////////////////////////Calling Functions
+
+turnAlternator()
+changeTurn()
+
+
+///////////////////////////////////////JUNK
 
 // function Winner(){
 //   if (connect3 === false) {
@@ -49,11 +62,10 @@ $(function(){
 //
 //
 //   }else{
-//
+//      alert("The Winner is: ")
 //   }
 // }
 
-changeTurn()
 
 // //////X Clicker
 // $(function(){
@@ -71,7 +83,7 @@ changeTurn()
 //   })
 // })
 
-<!-- Working CLickable reset-->
+
 // $(function(){
 //   $('table').on('click', function(){
 //     console.log('ivebeen clicked again');

@@ -12,3 +12,13 @@ Your deliverables:-
 7) The clear button should clear the board
 8) When a winning condition is present you should display a winner, either X or Y
 9) The program should use functions, loops, JQuery selectors and JQuery events
+
+## What went (sort of) well
+
+I was able to make each box repsond to a click easily, but the clicks would either input both an X and O or only one but never the other i.e. all boxes filled with X or O
+
+## Difficulties
+
+The alternating turn function was difficult to implement.
+I tried a true/false statement but an increment statment was actually easier to follow.
+But hey still dont work
